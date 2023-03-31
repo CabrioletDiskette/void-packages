@@ -1,0 +1,15 @@
+# Template file for 'kirigami-addons'
+pkgname=kirigami-addons
+version=0.7.2
+revision=1
+build_style=cmake
+configure_args="-DBUILD_TESTING=OFF -DBUILD_QCH=ON"
+hostmakedepends="extra-cmake-modules gettext qt5-qmake qt5-host-tools"
+makedepends="ki18n-devel kirigami2-devel"
+depends="kirigami2"
+short_desc="Add-ons for the Kirigami framework"
+maintainer="José Santos <agarimos@tutanota.com>"
+license="GPL-3.0-or-later"
+homepage="https://invent.kde.org/libraries/kirigami-addons"
+distfiles="${KDE_SITE}/kirigami-addons/kirigami-addons-${version}.tar.xz"
+checksum=f8629c597d6df715b3eece9ffed94926bf3cab829f22f3aab22e3c822e2b7b76

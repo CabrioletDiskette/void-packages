@@ -1,0 +1,20 @@
+# Template file for 'python3-gevent-eventemitter'
+pkgname=python3-gevent-eventemitter
+version=2.1
+revision=1
+build_style=python3-module
+wrksrc="gevent-eventemitter-${version}"
+hostmakedepends="python3-setuptools"
+depends="python3-gevent"
+checkdepends="$depends python3-coverage python3-pytest-cov python3-coveralls"
+short_desc="Python3 Module that Implements EventEmitter with gevent"
+maintainer="Adam Pschorr <adampschorr13@aol.com>"
+license="Not Listed"
+homepage="https://github.com/rossengeorgiev/gevent-eventemitter"
+distfiles="https://github.com/rossengeorgiev/gevent-eventemitter/archive/refs/tags/v${version}.tar.gz"
+checksum=ec44e3a69c3eab31462babc089d6d650be49e5186258f6284e43b9c7398926b1
+
+do_check() {
+	make -C "${wrksrc}" test
+}
+

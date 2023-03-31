@@ -1,0 +1,18 @@
+# Template file for 'puzzles'
+pkgname=puzzles
+version=20230303.c0f715f
+revision=1
+build_style=cmake
+configure_args="-DNAME_PREFIX=puzzles-"
+hostmakedepends="pkg-config"
+makedepends="gtk+3-devel"
+short_desc="Simon Tatham's Portable Puzzle Collection"
+maintainer="Leah Neukirchen <leah@vuxu.org>"
+license="MIT"
+homepage="https://www.chiark.greenend.org.uk/~sgtatham/puzzles/"
+distfiles="https://git.tartarus.org/?p=simon/puzzles.git;a=snapshot;h=c0f715fbaca77fbb6e86de604098d82687bdea48;sf=tgz>${pkgname}-${version#*.}.tgz"
+checksum=dfd601d277f304cac5bb38a99dc478fe4e7ec2019951461c18f1516c64c7fd8b
+
+post_install() {
+	vlicense LICENCE LICENSE
+}

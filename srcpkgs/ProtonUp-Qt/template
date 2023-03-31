@@ -1,0 +1,16 @@
+# Template file for 'ProtonUp-Qt'
+pkgname=ProtonUp-Qt
+version=2.6.5
+revision=1
+build_style=python3-pep517
+archs="i686 x86_64"
+hostmakedepends="python3-wheel"
+#may need to put python3 build deps here
+makedepends=""
+depends="python3-requests python3-vdf python3-xdg python3-steam"
+short_desc="Install and Manage GE-Proton, Luxtorpeda and Wine-GE in a GUI"
+maintainer="Adam Pschorr <adampschorr13@aol.com>"
+license="GPL-3.0"
+homepage="https://github.com/DavidoTek/ProtonUp-Qt"
+distfiles="https://github.com/DavidoTek/ProtonUp-Qt/archive/refs/tags/v${version}.tar.gz"
+checksum=598b03a2577e1572a251b798bcf9f0b8dae9b2db41e7435e6ca5a9f40209442b

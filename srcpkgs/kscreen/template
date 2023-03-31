@@ -1,0 +1,17 @@
+# Template file for 'kscreen'
+pkgname=kscreen
+version=5.27.2
+revision=1
+build_style=cmake
+configure_args="-DBUILD_TESTING=OFF -DKF5_HOST_TOOLING=/usr/lib/cmake"
+hostmakedepends="extra-cmake-modules qt5-devel qt5-qmake
+ kpackage-devel kconfig-devel kcoreaddons-devel gettext kcmutils-devel"
+makedepends="kxmlgui-devel libkscreen-devel plasma-framework-devel
+ layer-shell-qt-devel qt5-sensors-devel kcmutils-devel"
+depends="hicolor-icon-theme"
+short_desc="KDE screen management software"
+maintainer="John <me@johnnynator.dev>"
+license="GPL-2.0-or-later, LGPL-2.1-or-later"
+homepage="https://invent.kde.org/plasma/kscreen"
+distfiles="${KDE_SITE}/plasma/${version}/${pkgname}-${version}.tar.xz"
+checksum=1c89cfd26f7fd1a60beae5f31c7f40b3eb6b7c5d3a612eec75d9f7affb29d275

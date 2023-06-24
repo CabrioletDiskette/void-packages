@@ -1,6 +1,6 @@
 # Template file for 'lazygit'
 pkgname=lazygit
-version=0.37.0
+version=0.38.2
 revision=1
 build_style=go
 go_import_path=github.com/jesseduffield/lazygit
@@ -10,8 +10,9 @@ short_desc="Simple terminal UI for git commands"
 maintainer="icp <pangolin@vivaldi.net>"
 license="MIT"
 homepage="https://github.com/jesseduffield/lazygit"
+changelog="https://github.com/jesseduffield/lazygit/releases"
 distfiles="https://github.com/jesseduffield/lazygit/archive/refs/tags/v${version}.tar.gz"
-checksum=8545f3cffe110de80c88859cd11b42eaccb71f4c239c5bc2bff841f623438296
+checksum=2e727db952022c0518443d18c9b8a97a882970b93c5ab198ff33bb8ed2166c2f
 
 post_install() {
 	vlicense LICENSE

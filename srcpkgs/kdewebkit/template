@@ -1,6 +1,6 @@
 # Template file for 'kdewebkit'
 pkgname=kdewebkit
-version=5.103.0
+version=5.107.0
 revision=1
 build_style=cmake
 hostmakedepends="kcoreaddons extra-cmake-modules
@@ -11,7 +11,7 @@ maintainer="John <me@johnnynator.dev>"
 license="LGPL-2.0-or-later"
 homepage="https://invent.kde.org/frameworks/kdewebkit"
 distfiles="${KDE_SITE}/frameworks/${version%.*}/portingAids/${pkgname}-${version}.tar.xz"
-checksum=df32fe622dc7537725e50791ed3923e24046b03765398bb02201111688f175ce
+checksum=65502819b5cd0056cc0fe041b8fa7da3a703fc3222f8785f035f25613ad4b637
 
 kdewebkit-devel_package() {
 	short_desc+=" - development"

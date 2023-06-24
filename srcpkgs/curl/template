@@ -1,7 +1,7 @@
 # Template file for 'curl'
 pkgname=curl
-version=7.87.0
-revision=2
+version=8.1.2
+revision=1
 build_style=gnu-configure
 configure_args="ac_cv_sizeof_off_t=8 --enable-threaded-resolver --enable-ipv6
  --enable-websockets --with-random=/dev/urandom
@@ -22,12 +22,12 @@ checkdepends="python3 stunnel nghttp2 impacket"
 short_desc="Client that groks URLs"
 maintainer="Érico Nogueira <ericonr@disroot.org>"
 license="MIT"
-homepage="https://curl.haxx.se"
-changelog="https://curl.haxx.se/changes.html#${version//./_}"
-distfiles="${homepage}/download/${pkgname}-${version}.tar.bz2"
-checksum=5d6e128761b7110946d1276aff6f0f266f2b726f5e619f7e0a057a474155f307
+homepage="https://curl.se"
+changelog="https://curl.se/changes.html"
+distfiles="https://curl.se/download/curl-${version}.tar.gz"
+checksum=2e5a9b8fcdc095bdd2f079561f369de71c5eb3b80f00a702fbe9a8b8d9897891
 build_options="gnutls gssapi ldap rtmp ssh ssl zstd"
-build_options_default="ssh ssl zstd"
+build_options_default="ssl zstd"
 vopt_conflict ssl gnutls
 
 if [ "$CROSS_BUILD" ]; then

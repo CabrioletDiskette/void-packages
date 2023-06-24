@@ -1,6 +1,6 @@
 # Template file for 'plasma-workspace'
 pkgname=plasma-workspace
-version=5.27.2
+version=5.27.5
 revision=1
 build_style=cmake
 configure_args="-DBUILD_TESTING=OFF
@@ -23,7 +23,7 @@ maintainer="John <me@johnnynator.dev>"
 license="GPL-2.0-or-later, GFDL-1.2-or-later, LGPL-2.1-or-later"
 homepage="https://invent.kde.org/plasma/plasma-workspace"
 distfiles="${KDE_SITE}/plasma/${version}/${pkgname}-${version}.tar.xz"
-checksum=f10cc2f8bf1f01b77f51ff8d8aabf8655a929fd38a1232ad2f9c2e18c55d14a6
+checksum=ed0b95b2eefd0782ea652c2c6eed262e8eb91f97ff72925bb3f7e161d1f72a17
 
 build_options="pipewire"
 build_options_default="pipewire"

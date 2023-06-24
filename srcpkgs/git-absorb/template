@@ -1,7 +1,7 @@
 # Template file for 'git-absorb'
 pkgname=git-absorb
-version=0.6.9
-revision=1
+version=0.6.10
+revision=2
 build_style=cargo
 build_helper=qemu
 hostmakedepends="pkg-config"
@@ -11,7 +11,11 @@ maintainer="Dominic Monroe <monroef4@googlemail.com>"
 license="BSD-3-Clause"
 homepage="https://github.com/tummychow/git-absorb"
 distfiles="https://github.com/tummychow/git-absorb/archive/refs/tags/${version}.tar.gz"
-checksum=feaee35e6771d66d6d895a69d59d812cfbcabbecaa70ece64f87528a8c3c2fb5
+checksum=6cc58d2ae50027a212811faa065623666ccb6e8bd933e801319aaf92b164aa0a
+
+post_patch() {
+	cargo update --package git2@0.16.1 --precise 0.17.2
+}
 
 post_install() {
 	vlicense LICENSE.md

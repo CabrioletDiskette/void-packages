@@ -1,6 +1,6 @@
 # Template file for 'typioca'
 pkgname=typioca
-version=2.1.1
+version=2.4.2
 revision=1
 build_style=go
 go_import_path="github.com/bloznelis/typioca"
@@ -9,7 +9,7 @@ maintainer="Duncaen <duncaen@voidlinux.org>"
 license="MIT"
 homepage="https://github.com/bloznelis/typioca"
 distfiles="https://github.com/bloznelis/typioca/archive/refs/tags/${version}.tar.gz"
-checksum=766dc73424e55640bccabf56619b1d4915eb04c062d57b8b6c5f7b27aa1ca221
+checksum=57246b9f13b8f4f34a93eed7b2ac3efa871dd49714f44b9b85bbc82c4700b9a2
 
 post_install() {
 	vlicense LICENSE

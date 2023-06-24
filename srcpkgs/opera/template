@@ -1,6 +1,6 @@
 # Template file for 'opera'
 pkgname=opera
-version=96.0.4693.80
+version=99.0.4788.65
 revision=1
 archs="x86_64"
 create_wrksrc=yes
@@ -10,7 +10,7 @@ maintainer="mobinmob <mobinmob@disroot.org>"
 license="custom:Proprietary"
 homepage="https://www.opera.com/computer"
 distfiles="https://get.geo.opera.com/pub/opera/desktop/${version}/linux/opera-stable_${version}_amd64.rpm"
-checksum=0f6b941768ab90577b4e88f95041b41b1e03d03671bd8293604ea1b855e462b0
+checksum=62bf232a8b648b59616a2a870a2afc0f4be77f74f8e898d2dfe1295058e1b2db
 repository="nonfree"
 nostrip=yes
 

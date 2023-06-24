@@ -1,6 +1,6 @@
 # Template file for 'xorg-server-xwayland'
 pkgname=xorg-server-xwayland
-version=23.1.0
+version=23.1.2
 revision=1
 build_style=meson
 configure_args="-Dipv6=true -Dxvfb=false -Dxdmcp=false -Dxcsecurity=true
@@ -16,7 +16,7 @@ maintainer="Michal Vasilek <michal@vasilek.cz>"
 license="MIT"
 homepage="https://xorg.freedesktop.org"
 distfiles="https://gitlab.freedesktop.org/xorg/xserver/-/archive/xwayland-$version/xserver-xwayland-$version.tar.gz"
-checksum=0f9e1a1e2b628149565707edceb4150b8841d09709590824023513fdf4cad3ec
+checksum=ea63218a4608cf88e98b1437de87f4757acf0d162eae8160559465385e01d391
 make_check=no # needs xtest repository
 
 post_install() {

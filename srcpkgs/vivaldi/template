@@ -1,30 +1,31 @@
 # Template file for 'vivaldi'
+# Permission to redistribute is granted.
+# see: srcpkgs/vivaldi/files/redistribution-permission.eml
 pkgname=vivaldi
-version=5.7.2921.65
+version=6.1.3035.100
 revision=1
 _release=1
 archs="x86_64 aarch64 armv7l"
-depends="desktop-file-utils hicolor-icon-theme xz"
+depends="desktop-file-utils hicolor-icon-theme xz libnotify xdg-utils"
 short_desc="Advanced browser made with the power user in mind"
-maintainer="Orphaned <orphan@voidlinux.org>"
+maintainer="classabbyamp <void@placeviolette.net>"
 license="custom:Proprietary"
 homepage="https://vivaldi.com"
 repository=nonfree
-restricted=yes
 nostrip=yes
 skiprdeps="/opt/vivaldi/libqt5_shim.so"
 case "$XBPS_TARGET_MACHINE" in
 x86_64)
 	distfiles="https://downloads.vivaldi.com/stable/vivaldi-stable_${version}-${_release}_amd64.deb"
-	checksum=ee49100956047f33ae703eed1d048a581ae7d7f0608c5ee7f18e2cfa117f44be
+	checksum=0cff2e18ef765490322eec672a8d84e171cef8d20c6264a95409ad138607c029
 	;;
 aarch64)
 	distfiles="https://downloads.vivaldi.com/stable/vivaldi-stable_${version}-${_release}_arm64.deb"
-	checksum=30c3c6c13088a4281f79609f9fc3ea7c062b904585a3240505e617f624c2f0f3
+	checksum=babac4870118227e5016e1d21794b3ac0ead356c1a7a0ac0fb1ee681a45c5ba9
 	;;
 armv7l)
 	distfiles="https://downloads.vivaldi.com/stable/vivaldi-stable_${version}-${_release}_armhf.deb"
-	checksum=42791913580081b447631f5a1666ada6b9a8260adcbee5489a4ed93ef5965cd9
+	checksum=611be9b2bc1045afb4bc14e9b3a381b86919d2de17e0441adf991d30fcd0d4d3
 	;;
 *)
 	broken="No distfiles available for this target"

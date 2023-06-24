@@ -1,19 +1,20 @@
 # Template file for 'Signal-Desktop'
 pkgname=Signal-Desktop
-version=6.12.0
+version=6.22.0
 revision=1
 # Signal officially only supports x86_64 
-# x86_64-musl fails because of its dependency on 'node-gyp' which depends on a glibc specific extension
-# armv7hf/arm64: https://github.com/signalapp/Signal-Desktop/issues/3410
+# x86_64-musl could potentially work based on the Alpine port:
+# https://git.alpinelinux.org/aports/tree/testing/signal-desktop
+# ARM: https://github.com/signalapp/Signal-Desktop/issues/3410
 archs="x86_64"
-hostmakedepends="git git-lfs nodejs python3 tar yarn"
+hostmakedepends="git git-lfs nodejs-lts python3 tar"
 depends="cairo gtk+3 libvips pango"
 short_desc="Signal Private Messenger for Linux"
 maintainer="anelki <akierig@fastmail.de>"
 license="AGPL-3.0-only"
 homepage="https://github.com/signalapp/Signal-Desktop"
 distfiles="https://github.com/signalapp/Signal-Desktop/archive/v${version}.tar.gz"
-checksum=c07dccc9c032623e3b93eda2992da1c59e2dc6a93c84646d0d5bbfe4e08de4d6
+checksum=b895314710284bb7b5caac67eb514d8b83e933ace2c0801bc690a9c621cbed94
 nostrip_files="signal-desktop"
 
 post_extract() {
@@ -22,6 +23,7 @@ post_extract() {
 
 	vsed 's/"node": "/&>=/' -i package.json
 
+	npm install -g yarn
 	# Dependencies have to be installed before applying patch
 	yarn install --ignore-engines --frozen-lockfile
 }
@@ -49,7 +51,7 @@ do_install() {
 	vinstall ${FILESDIR}/signal.desktop 644 usr/share/applications/
 
 	vmkdir usr/share/icons/hicolor
-	for size in 16 32 48 128 256 1024; do
+	for size in 16 32 256; do
 		vinstall images/icon_${size}.png 644 usr/share/icons/hicolor/${size}x${size}/apps/ signal.png
 	done
 

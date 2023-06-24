@@ -1,0 +1,31 @@
+# Template file for 'mlton'
+pkgname=mlton
+version=20210107
+revision=1
+build_style=gnu-makefile
+#configure_args=""
+#make_build_args=""
+#make_install_args=""
+#conf_files=""
+#make_dirs="/var/log/dir 0755 root root"
+hostmakedepends="wget gcc gmp-devel make bash tar patch"
+makedepends=""
+depends=""
+short_desc="lol"
+maintainer="Adam Pschorr <adampschorr13@aol.com>"
+license="GPL-3.0-or-later"
+homepage="ree"
+#changelog=""
+distfiles=https://github.com/MLton/mlton/archive/refs/tags/on-20201002-release.tar.gz
+checksum=630839fea71586ffa77f06962cec323227b8b7913992d04126563e07bdbbafaa
+#TODO:Checksum other files
+post_fetch() {
+	wget https://github.com/MLton/mlton/releases/download/on-20201002-release/mlton-20201002-1.amd64-linux.tgz
+	tar -xf $XBPS_BUILDDIR/mlton-20201002-1.amd64-linux.tgz
+	cd $XBPS_BUILDDIR/mlton-20201002-1.amd64-linux
+	make
+}
+
+#pre_build() {
+#	
+#}

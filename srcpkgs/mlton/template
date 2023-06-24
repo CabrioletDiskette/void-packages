@@ -1,31 +1,28 @@
 # Template file for 'mlton'
 pkgname=mlton
-version=20210107
+version=20210117
 revision=1
 build_style=gnu-makefile
-#configure_args=""
-#make_build_args=""
-#make_install_args=""
-#conf_files=""
-#make_dirs="/var/log/dir 0755 root root"
-hostmakedepends="wget gcc gmp-devel make bash tar patch"
-makedepends=""
-depends=""
-short_desc="lol"
+hostmakedepends="wget gcc make tar patch"
+makedepends="gmp-devel"
+depends="gmp"
+build_wrksrc="mlton-$version/"
+short_desc="Whole-program optimizing compiler for the Standard ML programming language"
 maintainer="Adam Pschorr <adampschorr13@aol.com>"
-license="GPL-3.0-or-later"
-homepage="ree"
-#changelog=""
-distfiles=https://github.com/MLton/mlton/archive/refs/tags/on-20201002-release.tar.gz
-checksum=630839fea71586ffa77f06962cec323227b8b7913992d04126563e07bdbbafaa
-#TODO:Checksum other files
-post_fetch() {
-	wget https://github.com/MLton/mlton/releases/download/on-20201002-release/mlton-20201002-1.amd64-linux.tgz
-	tar -xf $XBPS_BUILDDIR/mlton-20201002-1.amd64-linux.tgz
-	cd $XBPS_BUILDDIR/mlton-20201002-1.amd64-linux
+license="HPND"
+homepage="http://www.mlton.org/"
+distfiles="https://github.com/MLton/mlton/releases/download/on-$version-release/mlton-$version.src.tgz
+https://github.com/MLton/mlton/releases/download/on-$version-release/mlton-$version-1.amd64-linux-glibc2.31.tgz"
+checksum="ec7a5a54deb39c7c0fa746d17767752154e9cb94dbcf3d15b795083b3f0f154b
+749cb59d6baccd644143709be866105228d2b6dcd40c507a90b89c9b5e0f45d2"
+
+
+
+post_extract() {
+	cd $wrksrc/mlton-$version-1.amd64-linux-glibc2.31
 	make
 }
 
-#pre_build() {
-#	
-#}
+post_install() {
+	vlicense LICENSE 
+}

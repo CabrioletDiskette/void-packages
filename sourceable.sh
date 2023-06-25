@@ -2,6 +2,12 @@
 root=~/void-packages/void-packages
 alias main="git checkout main"
 alias dev="git checkout develop"
+
+ver () {
+	xbps-query -R $1 | grep pkgver
+	echo " vs "
+	cat $root/srcpkgs/$1/template | grep "version="
+}
 sw () {
 	git checkout $1
 }

@@ -17,6 +17,8 @@
 !/etc
 !/srcpkgs
 !/xbps-src
+!/*.info
+!/*.sh
 etc/conf
 etc/conf.*
 etc/virtual
